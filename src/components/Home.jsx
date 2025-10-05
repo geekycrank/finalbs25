@@ -1,123 +1,115 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom"; 
 import "./Home.css";
-import "../assets/Home-bg-img.jpg";
-import "../assets/about_desktop.png";
-import logo from "../assets/bslogo.png";
-import bs_logo from "../assets/about_phone.png";
-import "../assets/Contact_bg.png";
+
+import moon from "../assets/moon.png";
+import castle from "../assets/castle.png";
+import witch from "../assets/witch.png";
+import typography from "../assets/BStypography.png";
+import broom from "../assets/broom.png";
+import bats from "../assets/bats.png";
+import vector1 from "../assets/vector1.png"; // left cloud
+import vector2 from "../assets/vector2.png"; // right cloud
+import tree1 from "../assets/tree1.png"; // left tree
+import tree2 from "../assets/tree2.png"; // right tree
+import wand from "../assets/wand.png";
+import bslogo from "../assets/bslogo.png";
+
+import CountdownTimer from "./CountdownTimer";
 import WebTeam from "./WebTeam";
-import CountdownTimer from './CountdownTimer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; 
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-
-
 
 function Home() {
-  const targetDate = '2024-09-14T08:59:59'; 
+  const targetDate = "2025-10-25T00:00:00";
 
   return (
-    <div style={{maxWidth:"100vw"}}> 
-      <div className="home" style={{color:"#5f1a1f"}}>
-        <div className="presents-quote" style={{display:"flex", flexDirection:"column"}}>
-          <h3 style={{padding:"0px",margin:"0px"}}>The Literary and Debating Society </h3>
-          <p>presents</p>
-        </div>
-        
-        <div className="Brainstrain-name">
-          <h1>BrainStrain '24</h1>
-          
-          <p className='event-status'></p>
-          
-        </div>
+    <div className="homepage">
+      <header className="hero">
+        {/* decorative images (absolute) */}
+        <img src={moon} alt="moon" className="moon" />
+        <img src={bats} alt="bats" className="bats" />
+        {/* <img src={wand} alt="wand" className="wand" /> */}
+        <img src={witch} alt="witch" className="witch" />
+        <img src={castle} alt="castle" className="castle" />
+        <img src={tree1} alt="left tree" className="tree tree-left" />
+        <img src={tree2} alt="right tree" className="tree tree-right" />
+        <img src={vector1} alt="left cloud" className="cloud cloud-left" />
+        <img src={vector2} alt="right cloud" className="cloud cloud-right" />
 
-        <div className="Timer" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <CountdownTimer targetDate={targetDate} />
-          <p className='datee' style={{position:"absolute",bottom: "20%",fontFamily:"EFCOBrookshireRegular",fontSize:"1.5rem"}}>September 14</p>
-        </div> 
-      </div>
-
-     
-      <div className='about-page'>
-        <div className="about">
-           <div className='about-content'>
-           <div className="about-header">
-            <h2>About</h2>
-           </div>
-            
-           <div className="about-body">
-            <div className='about-image'><img src={bs_logo} alt="logo"></img></div>
-            <div className='about-inner'>
-              <p style={{margin:"0px",padding:"0px",fontSize:"1.5rem",fontFamily:"Kurale"}}>
-              Brainstrain is an inter-collegiate literary fest hosted by the Literary and Debating Society of the Government College of Technology, Coimbatore. This fest features a multitude of literary events designed to bring out the hidden talents of participants while serving as a platform to connect like-minded individuals from diverse geographical backgrounds.
-             
-              </p>
-            </div>
-           </div>
-           
-
-            
-           </div>
-             
+        {/* main content flow (ensures navbar won't hide it) */}
+        <div className="hero-content">
+          <div className="hero-top-text">
+            <br /> <br />
+            <h2>The Literary and Debating Society</h2>
+            <h3>Presents</h3>
           </div>
 
-          <div className='about-D'>
-            <h1 style={{color:"#e8ddc0",marginBottom:"3%",fontSize:"2.5rem"}}>A b o u t</h1>
-             <div className="about-D-body" style={{display:"flex",maxWidth: "80%",height:"50%",gap:"8%"}}>
-            <div className='about-D-image' style={{width:"40%"}}>
-            <img src={logo} alt="logo"></img>
-            </div>
-
-            <div className='about-D-inner' style={{width:"60%",backgroundColor:"#e8ddc0",borderRadius:"20px",color:"#5f1a1f"}}>
-              <p style={{color:"inherit",fontSize:"1.3rem"}}>
-              Brainstrain is an inter-collegiate literary fest hosted by the Literary and Debating Society of the Government College of Technology, Coimbatore. This fest features a multitude of literary events designed to bring out the hidden talents of participants while serving as a platform to connect like-minded individuals from diverse geographical backgrounds.
-              </p>
-              
-            </div>
-            </div>
-          </div>
-
-
-          </div>
+          {/* Title artwork centered and above the timer */}
+          <img 
+  src={typography} 
+  alt="Brainstrain'25" 
+  className="title" 
+  style={{width: "500px", height: 'auto',backgroundColor: 'transparent', borderRadius: '10px', padding: '5px'}}
+/>
+          <img src={broom} alt="broom" className="broom-icon"/>
       
 
-      <div className="team" style={{display:"flex",flexDirection:"column",backgroundColor:"#e8ddc0",paddingBottom:"3%",height: "90vh"}}>
-        <h2 style={{textAlign:"center",color:"#5f1a1f",fontFamily:"EFCOBrookshireRegular",padding:"4%",margin:"0%"}}>Web Team</h2>
-        <WebTeam></WebTeam>
-      </div>
-          
-      <div className="contact" id="Contact" style={{display:"flex",flexDirection:"column",alignItems:"center",color:"#e8ddc0",height:"100vh",padding:"2%"}}>
-        <h1 style={{fontFamily:"EFCOBrookshireRegular",fontSize:"1.4rem",fontSize: "2.4rem",height: "25%",
-    paddingTop: "5%"}}>Contact</h1>
-        <div className="body-contact">
-          <div className="icons" style={{display:"flex",alignItems:'center',justifyContent:"center",marginBottom: "4%"}}>
-          <a href="mailto:litsociety.gct@gmail.com" target='blank'>
-            <div className="icon1" style={{width:"58px",height:"58px"}}>
-             <FontAwesomeIcon className="iconImage" icon={faEnvelope} style={{color: "#611a22",}} />
-            </div>
-            </a>
+          {/* Timer block (flow layout — not absolutely positioned) */}
+          <div className="hero-timer">
+            <p className="starts-on">Starts on <span>October 25</span></p>
+            <CountdownTimer targetDate={targetDate} />
 
-            <a href="https://www.instagram.com/literary_and_debating_society/" target='blank'>
-            <div className="icon2"  style={{width:"58px",height:"58px"}} >
-            <FontAwesomeIcon className="iconImage" icon={faInstagram} style={{color: "#611a22",}} />
-            </div>
-            </a>
-            </div>
-
-          <div className="contact-details" style={{textAlign:'center'}}>
             
-            <div>
-              <p>Arivumathi - 9344346700</p>
-              <p>Dhanvarashan - 8220916740</p>
-            </div>
+              
+            <Link to="/register" className="register-btn-link">
+              <button className="register-btn">
+                Register Now
+              </button>
+            </Link>
           </div>
         </div>
+      </header>
 
-        <div className="contact-last">
-          <h4 style={{textAlign: "center"}}>Powered by The Literary and Debating Society </h4>
+      {/* About card */}
+      <section className="about-section">
+        <div className="about-card">
+          <img src={bslogo} alt="logo" className="about-logo" />
+          <div className="about-text">
+            <p>
+              Brainstrain is an inter-collegiate literary fest hosted by the Literary and Debating Society of the Government College of Technology, Coimbatore. This fest features a multitude of literary events designed to bring out the hidden talents of participants while serving as a platform to connect like-minded individuals from diverse geographical backgrounds.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Web team (carousel) */}
+      <section className="webteam-section">
+        <h2>Web Team</h2>
+        <WebTeam />
+      </section>
+
+      {/* Contact */}
+      <section className="contact-section" id="Contact">
+        <div className="contact-inner">
+          <div className="contact-art">
+            <img
+              src={require("../assets/telephone.png")}
+              alt="telephone"
+              className="contact-phone"
+            />
+          </div>
+          <div className="contact-info">
+            <div className="contact-names">
+              <p>Bharani - 75400 09703</p>
+              <p>Akash - 63856 98553</p>
+            </div>
+            <div className="contact-icons">
+              <a href="tel:+917540009703" aria-label="Call Bharani" className="contact-icon"><img src={wand} alt="wandy" className="wand"/></a>
+              <a href="https://wa.me/917540009703" target="_blank" rel="noreferrer" className="contact-icon" style={{ transform: "translateY(500px)" }}>.</a>
+            </div>
+            <h4 className="powered">Powered By The Literary and Debating Society</h4>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

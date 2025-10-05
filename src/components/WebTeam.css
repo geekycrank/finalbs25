@@ -1,41 +1,92 @@
+.webteam-container {
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Team member card */
 .team-member {
-    text-align: center;
-    padding: 20px;
-    background: #e8ddc0;
-   /* border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
-  }
-  
-  .team-member-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-  }
-  
-  .team-member-name {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .team-member-role {
-    font-size: 1rem;
-    color: #555;
-  }
-  /* Custom styles for the dots */
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+/* Circular Image */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #5f1a1f; /* Matches theme */
+  transition: border-color 0.2s;
+}
+
+.team-member-image:hover {
+  border-color: #f7b731;
+}
+
+/* Name + Role */
+.team-member-name {
+  font-size: 1.6rem;
+  margin: 12px 0 6px;
+  color: #5f1a1f;
+  font-weight: bold;
+  font-family: "Kurale", serif;
+}
+
+.team-member-role {
+  font-size: 1rem;
+  color: #444;
+  font-family: "Britannica", serif;
+  opacity: 0.85;
+}
+
+/* Carousel customization */
+.react-multi-carousel-list {
+  height: auto !important;
+  padding-bottom: 2rem;
+}
+
+.custom-dot-list-style {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
 .custom-dot-list-style .react-multi-carousel-dot button {
-  background-color: #5f1a1f; /* Change this to your desired color */
+  background-color: #5f1a1f;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-margin-top: 3%;
+  opacity: 0.6;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .custom-dot-list-style .react-multi-carousel-dot--active button {
-  background-color: #f7b731; /* Change this to your desired active color */
+  background-color: #f7b731;
+  opacity: 1;
+  transform: scale(1.2);
 }
-.react-multi-carousel-list {
-  height: 60vh !important;
 
-}
+/* minor adjustments to match main-page visuals (contrast and spacing) */
+.webteam-container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+.team-member { background: rgba(232,221,192,0.95); border-radius: 12px; padding: 1.2rem; }
+.team-member-image { width: 200px; height: 200px; border-radius: 50%; border: 6px solid #5f1a1f; }
+.team-member-name { color: #5f1a1f; font-family: "Kurale", serif; font-weight: 700; }
+.team-member-role { color: rgba(95,26,31,0.9); }
+

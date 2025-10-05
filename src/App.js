@@ -5,105 +5,101 @@ import Home from './components/Home';
 
 import Events from './components/Events';
 import Register from './components/Register';
+import Ca from './components/Ca';
 import Navbar from './components/Navbar';
-import FooterNav from "./components/FooterNav";
+//import FooterNav from "./components/FooterNav";
 import Event from "./components/Event";
-import DramaForm from "./components/DramaForm";
+//import DramaForm from "./components/DramaForm";
 function App()
 {
 
   const events=[
     {
       eventName:"ADZAP",
-      contact:"7010922948",
+      contact:"9123576842",
       prize:"2250",
-      description:"Pitch the most outrageous product ideas imaginable! Say invisible socks or a smartphone that only works when you're asleep. Get creative, get funny, and keep the audience in stitches.",
+      description: "Pitch the wildest product ideas with a twist of humor and creativity! Entertain the crowd with quirky ads, crazy props and unforgettable performances!",
       guidelines:[
-        'Your product idea/ad should be unique and humorous. Think outside the box.',
-        'Ensure all team members have a role in the ad and contribute to the overall performance.',
-        'The use of simple props is allowed. Make sure any props are easy to manage within the time constraints.',
-        'Be mindful of the time.'
+        "Design a product idea that's attractive, innovative, funny, and wildly imaginative.",
+        "Every team member should take part in the act.",
+        "Props are welcome—keep them simple and manageable.",
+        "Stick to the time limit, or risk losing points."
       ],
       prelims:[
-        'Each team should have 4-6 members.',
-        'You will have 7 minutes to brainstorm and script your ad.',
-        'Your performance should last 4-5 minutes. Going over the time limit will cost you points.',
-        'Make sure your humor is clean. Offensive content or vulgar language is not allowed.',
+        "Teams must have 4–6 members.",
+        "You'll get 7 minutes to plan and script your ad before the show begins, and 4–5 minutes to perform it (crossing the limit will cost points).",
+        "Humor should be clean—no offensive jokes allowed.",
         "The judge's decision is final."
       ]
     },
     {
       eventName:"DEBATE",
-      contact:"7845080225",
+      contact:"7418908013",
       prize:"1500",
-      description:"Prepare to engage in a battle of wits, where your critical thinking and communication skills will be put to the ultimate test. This event is designed to test your ability to argue both for and against a given topic, clearly and coherently, in a limited time setting.",
+      description: <p>"argue,Convince,Win" <br/> Where wits win wars, are you wizards ready to leave your opposers with verbally intellectual scars? Enter debate!"</p>,
       guidelines:[
-         "Individual Participation.",
-    "Two-round event."
+        "The debate will be conducted in two rounds.",
+        "Topics will be provided on the spot for both rounds.",
+        "Round 1 will have individual participation, and the top 6 will advance to the Round 2 as two teams of 3 members each.",
+        "Use of offensive, vulgar, or disrespectful content will lead to disqualification.",
+        "Reading directly from phones or papers is strictly prohibited."
       ],
       prelims:[
-        "Contestants will receive a topic just before they are set to speak. Preparation time of one minute will be allotted.",
-        "Each contestant will have 3 minutes to deliver their speech.",
-        "Block and Tackle:",
-        ["- When prompted to 'BLOCK,' the contestant must speak against the topic.",
-        "- When prompted to 'TACKLE,' the contestant must speak in favor of the topic.",
-        "- The transitions between BLOCK and TACKLE will occur multiple times within the 3-minute time frame."]
+        "A random topic will be given on the spot.",
+        "1 minute of preparation time.",
+        "1 minute to speak.",
+        "When prompted to TACKLE, speak in favor of the topic.",
+        "When prompted to BLOCK, speak against the topic.",
+        "You may be asked to switch multiple times during your speech."
       ],
       finals:[
-        "Teams will be formed from those selected in Round 1.",
-      "Teams will be given a topic 10 minutes before the debate begins.",
-      "Speech Structure:",
-      ["- The first two contestants from each team will present arguments in favor of the topic.",
-      "- The third contestant will present a rebuttal speech, countering the points made by the opposing team."],
-      "The jury's decision will be final."
+        "Finalists will be grouped into teams.",
+        "The format will be explained during the finale.",
+        "Jury's decision is final."
       ]
     },
     
     {
       eventName:"DRAMA",
-      contact:"8248255395",
+      contact:"6385698553",
       prize:"3750",
-      description:"Get ready to bring your acting skills to life and command the stage! This is your moment to step into the spotlight and show the world what you’ve got. It’s not just about performing—it’s about seizing the chance to be at the center of attention and express your passion for drama. Get ready to entertain, explore, and let your talent shine when it’s your time to take the stage. The stage is set, and the spotlight is waiting for you!",
+      description:"Step into a world where stories come alive and emotions take center stage! Drama isn't just an act it's an experience.The curtain is rising will you rise with it?",
       guidelines:[
-        'The first round of the event will be conducted based on the scripts submitted by the participating teams. Teams that are shortlisted for the final round will be notified via WhatsApp.'
-        
+        "The first round of the event will be conducted based on the scripts submitted by the participating teams. Teams that are shortlisted for the final round will be notified via WhatsApp."
       ],
       prelims:[
-        'Each participating team must consist of 8-10 members. No request to change this shall be entertained.',
-        'Teams are required to bring their own props and costumes. Hazardous materials or substances are strictly prohibited on stage. All props must be removed from the stage immediately after the performance.',
-        'Each team is allotted a maximum of 20 minutes for their performance, including setup and cleanup time.',
-        'Teams that exceed the time limit or violate any of the rules will face disqualification.',
-        'Participants must arrive on time and adhere to all instructions provided at the start of the event.',
-        'The use of obscene language, offensive content, or themes that may offend any group is strictly prohibited.',
-        "The judges' decisions will be final and binding in all circumstances.",
-        'Any disruptive behavior, such as tampering with another team’s props or equipment, will result in immediate disqualification.',
-        "Participants and spectators are expected to maintain decorum and show respect throughout the event. Any form of misconduct or disrespectful behavior towards participants, judges, or organizers will not be tolerated.",
-        "On-the-spot registration will not be accepted.",
+        "Each team must have 8–10 members. Teams outside this limit won't be allowed.",
+        "Teams should arrange their own props and costumes. Hazardous materials are strictly not allowed.",
+        "Performances must be completed within 20 minutes, including setup and clearance time.",
+        "Exceeding the time limit or breaking the rules will lead to disqualification.",
+        "Teams must report on time and follow all instructions given by the organizers.",
+        "Foul language, offensive content, or inappropriate themes are strictly prohibited.",
+        "Tampering with another team's equipment or props will lead to immediate disqualification—play fair!",
+        "All performances must stick to the given theme.",
+        "Participants and audience are expected to maintain respect and decorum towards everyone, including the judges and organizers.",
+        "Only pre-registered teams can participate; spot registrations will not be accepted. The judges' decision is final."
       ]
     },
     {
-      eventName:"DUMB C",
-      contact:"9551014349",
+      eventName:"MATES MANIA",
+      contact:"9894579749",
       prize:"2250",
-      description:"Demonstrate your perfect partnership with a game of Dumb Charades! This classic and entertaining game invites you and your partner to get imaginative with clues and lively gestures. It’s an ideal way to highlight your teamwork while enjoying endless laughs together!",
+      description:"Mates Mania is all about fun, laughter, and friendship! Enjoy a series of light games and quirky tasks with your buddies—no stress, just pure chill vibes.",
       guidelines:[
-        'Each team should consist of 2 members.',
-        'The event will feature 2 rounds.'
+        "Teams can have 2 to 4 members – bring your crew!",
+        "A mix of fun games and mini challenges await to keep the smiles rolling.",
+        "Stay cool, maintain the vibe, and respect the decorum.",
+        "Rounds and surprises will be revealed only on the spot – expect the unexpected!"
       ],
       prelims:[
-        'Questions will be based on movies, day-to-day life objects, and proverbs/idioms.',
-        'Splitting words or usage of codes and references are restricted.',
-        'Mouthing words or using sounds are also restricted.',
-        'Participants are not allowed to enact the exact word of the movie. They should enact the plot of the movie.',
-        'Further rules will be explained at the venue.'
       ],
-      finals:["Instructions for the finals will be given on the spot."]
+      finals:[]
     },
     {
       eventName: "JAM",
-      contact:"9344346700",
+      contact:"9778117278",
       prize:"1500",
-      description: "Just A Minute (JAM) is an exhilarating event that challenges participants to speak spontaneously on a given topic for one minute. This fast-paced competition not only tests quick thinking and creativity but also hones communication skills under pressure, providing an adrenaline-fueled experience that pushes speakers to their limits.",
+      description: "",
       guidelines: [
         "Individual Participation.",
         "Two-round event."
@@ -119,14 +115,12 @@ function App()
         "The finalists are required to speak fluently while their competitors scrutinize their speech for errors.",
         "Further rules will be explained before the start of the finals."
       ]
-    }
-    
-    ,
+    },
     {
       eventName: "MICROTALE",
-      contact:"8667721591",
+      contact:"7540009703",
       prize:"1500",
-      description: "Embark on a literary journey of brevity and depth at our Microtale event! With just a few words, weave stories that linger in minds and hearts. Join us for poetic magic where the tiniest tales hold the mightiest power by unleashing your creativity and crafting miniature worlds where every letter counts.",
+      description: "Unleash your creativity in our Microtale event—craft tiny tales in few words, where every letter holds mighty magic!",
       guidelines: [
         "Individual participation only.",
         "It is a single-round event.",
@@ -143,13 +137,14 @@ function App()
     },
     {
       eventName: "POEM",
-      contact:"8667721591",
+      contact:"7540009703",
       prize:"1500",
-      description: "Step into a realm where words dance with imagery; let the picture guide your lyrical spree. Participants will be given a picture about which they have to write a poem on a topic that best suits it.",
+      description: "Let your words flow in verse, where imagination meets emotion and every line becomes a heartfelt expression through poetry!!",
       guidelines: [
         "Individual participation.",
         "It is a single-round event.",
-        "Topics will be given on the spot."
+        "Topics will be given on the spot.",
+        "15 minutes will be provided for composing the poem."
       ],
       prelims: [
         "The poem should have a minimum of 8 lines and should not exceed 16 lines.",
@@ -161,33 +156,34 @@ function App()
     },
     {
       eventName: "PUZZLE",
-      contact:"7812868428",
+      contact:"8248581965",
       prize:"2250",
-      description: "Prepare to twist your mind and challenge your thinking at our Puzzle event! Dive into a world of brainteasers that will test your logic and creativity. From cryptic riddles to intricate puzzles, every challenge will test your logic and wit. Ready to unlock the mysteries?",
+      description: "Puzzle your mind, crack the code! Brain teasers, riddles, and logic challenges await.",
       guidelines: [
-        "Two members per team.",
-        "It is a single-round event."
+        "2 members per team.",
+        "This single-round event will put your magical minds to the test.",
+        "Be prepared with your trusty Pen and Quill."
       ],
       prelims: [
         "Duration: 30 minutes.",
-        "The use of mobile phones or digital aids is not allowed.",
-        "Cheating or malpractice is strictly prohibited.",
-        "The Jury's decision is final."
+        "No magical gadgets or digital aids allowed.",
+        "Cheating or dark magic is strictly prohibited.",
+        "The jury's decision is final."
       ]
     },
     {
       eventName: "QUIZ",
-      contact:"8072477148",
+      contact:"6379190226",
       prize:"2250",
-      description: "Get ready for a fun quiz that tests your knowledge and quick thinking. Compete with the best and aim to be the top quiz champion. Only the sharpest will win. Show your skills and rise to the challenge!",
+      description: "A fast-paced battle of brains where knowledge is your weapon and wit is your shield. Team up, think sharp, and prove you have what it takes to become the ultimate quiz champion!",
       guidelines: [
-        "Each team should consist of 2 members.",
+        "Each team should consist of 2 members",
         "Two-round event."
       ],
       prelims: [
-        "Use of mobile phones during the event will result in disqualification.",
-        "The preliminaries will take place strictly within the allotted time.",
-        "The top 6 teams will advance to the finals."
+        "Using mobile phones during the event will lead to immediate disqualification.",
+        "Preliminary rounds will be conducted strictly within the given time frame.",
+        "Only the top six teams will qualify for the finals."
       ],
       finals: [
         "Final round rules will be announced on the spot."
@@ -195,35 +191,33 @@ function App()
     },
     {
       eventName: "SHIPWRECK",
-      contact:"6374437435",
+      contact:"9629762581",
       prize:"1500",
-      description: "A tempest of wit and wisdom, where words and a sense of humor are the lifeboats that save or sink. You’re a crewmate on a sinking ship, and there’s only one life jacket left. Your mission? Convince the captain to save you!",
+      description: "Stranded in the middle of the ocean, your ship is sinking fast. As your character, it's your last chance to convince the captain that the survival should be yours!",
       guidelines: [
-        "All participants must compete individually.",
-        "The event consists of two rounds: Prelims and Finals.",
-        "Any controversial or offensive content will result in immediate disqualification."
+        "Solo event packed with drama and entertainment",
+        "Characters and scenarios will be revealed on the spot",
+        "Top 6 participants from Round 1 qualify for the Grand Showdown (Round 2)",
+        "Language must remain clean, creative, and respectful",
+        "Decisions of the jury is final and binding"
       ],
       prelims: [
-        "The prelims will follow a Block & Tackle format.",
-        "Each participant has to speak both for and against the assigned topic.",
-        "Participants have a total of 90 seconds to speak.",
-        "The assigned topic cannot be changed once given.",
-        "Additional instructions will be provided on the spot.",
-        "The top 6 participants from the prelims will qualify for the finals."
+        "You'll be given a quirky, unexpected scenario.",
+        "1 minute to think, then it's your time to shine.",
+        "Be spontaneous, imaginative, and engaging.",
+        "Impress the captain — and you sail into Round 2."
       ],
       finals: [
-        "In the finals, each contestant will be assigned a character, either fictional or non-fictional (e.g., Neeraj Chopra, Kamala Harris, Dora).",
-        "Once assigned, characters cannot be changed.",
-        "Additional instructions will be provided on the spot.",
-        "The jury’s decision will be final."
+        "A real or fictional character will be assigned to you.",
+        "Become that character — live them, breathe them.",
+        "Convince the captain why you  deserve the  life jacket."
       ]
-    }
-    
-    ,{
+    },
+    {
       eventName: "UNO MINUTO",
-      contact:"9361140647",
+      contact:"8610480703",
       prize:"1500",
-      description: "Are you a person who can stun the observer with your electrifying performance? Then, this is for you! The stage is all yours for those 60 seconds. May it be any talent that makes you unique, may it be anything. Come on, people! Indulge us in astonishment with your stunning talents! The stage awaits.",
+      description: "Got talent but no stage? Unominuto welcomes you all. You can sing, dance, solve a Rubik's cube or show off any skill you're pro at; just own the stage for a minute, and you're good to go!",
       guidelines: [
         "Individual participation.",
         "Two-round event."
@@ -236,9 +230,10 @@ function App()
         "Those who are shortlisted will advance to the finals."
       ],
       finals: [
-        "All the rules in the prelims should be followed in finals as well.",
-        "The performance shall be based on the same skill or it might be a different skill from the one performed in the prelims.",
-        "In case of performing with the same skill, the content and the method of delivery should be different. Eg: If one chooses to dance, he/she may exhibit a different form of dance in the other round."
+        "All the rules in the prelims should be followed in finals as well. The performance shall be based on the same skill or it a might be different skill from the one performed in the prelims.",
+        "In case of performing with the same skill, the content and the method of delivery should be different. Eg: If one chooses to dance, he/she may exhibit different form of dance in the other round.",
+        "If the performance is of a different skill from the prelims, Bonus points are awarded.",
+        "If it were to occur a tie, the audience will be given to vote a poll for the best performer."
       ]
     }
     ]
@@ -251,7 +246,8 @@ function App()
       
       <Route path="/Events" element={<Events></Events>} />
       <Route path="/Register" element={<Register></Register>} />
-      <Route path="/drama" element={<DramaForm></DramaForm>} />
+      <Route path="/Ca" element={<Ca></Ca>} />
+      {/* <Route path="/drama" element={<DramaForm></DramaForm>} /> */}
       <Route path="/event1" element={<Event eventName={events[0].eventName} contact={events[0].contact} prize={events[0].prize} eventDescription={events[0].description} eventGuidelines={events[0].guidelines} eventRules={events[0].prelims} eventFinals={events[0].finals}></Event>} />
       <Route path="/event2" element={<Event eventName={events[1].eventName} contact={events[1].contact} prize={events[1].prize} eventDescription={events[1].description} eventGuidelines={events[1].guidelines} eventRules={events[1].prelims} eventFinals={events[1].finals}></Event>} />
       <Route path="/event3" element={<Event eventName={events[2].eventName} contact={events[2].contact} prize={events[2].prize} eventDescription={events[2].description} eventGuidelines={events[2].guidelines} eventRules={events[2].prelims} eventFinals={events[2].finals}></Event>} />
@@ -266,7 +262,7 @@ function App()
       
     </Routes>
     
-     <FooterNav></FooterNav> 
+     {/* <FooterNav></FooterNav>  */}
     
   </Router>)
 

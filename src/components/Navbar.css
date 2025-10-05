@@ -1,100 +1,93 @@
 
-.brainstrain {
-  
-  font-family: 'EFCOBrookshireRegular', sans-serif;
-  font-size: 2.0rem;
-    color: rgb(40, 12, 12);
-  }
-.navbarr{
-  z-index: 3000;
-  max-width:100vw ;
-  height: 10vh;
-  background-color: rgb(70, 24, 24);
-  color:#eadecb;
+.navbarr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;              /* fixed navbar height */
+  background-color: rgb(34, 16, 22); /* deep maroon/dark purple */
+  color: #eadecb;
+  display: flex;
+  align-items: center;
+  z-index: 4000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  padding: 0 1.5rem;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.top-nav{
-  display: none !important;
+
+/* Left: logo + site title */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-@media  screen and (max-width:637px) {
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.06);
+  background: #fff;
+}
 
-    .navbarr{
-      z-index: 3000 !important;
-    }
-  }
-  .logo{
-   
-      width: 58px;
-      border-radius: 100px;
-      max-height: 58px;
-      margin-left: 10px;
-  }
+.brainstrain {
+  font-family: "EFCOBrookshireRegular", serif;
+  font-size: 1.4rem;
+  margin: 0;
+  color: #eadecb;
+  letter-spacing: 1px;
+}
 
-  @media  screen and (min-width:1093px) {
+/* Right: nav links */
+.nav-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  font-family: "EFCOBrookshireRegular", serif;
+}
 
-  .top-nav{
-    display: flex !important;
-    width: 50%;
-   margin-left: 25%;
-   font-family: 'EFCOBrookshireRegular', sans-serif;
-  }
-  .top-nav > p{
-    width: 100%;
-    font-size: 1.7rem;
-    color:#eadecb;
-    margin-bottom: 0px;
+.nav-links a, .nav-links a:visited {
+  color: #eadecb;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s, transform 0.12s;
+}
 
-  }
-  a{
-    text-decoration: none !important;
-    color: #eadecb;
-  }
-  }
+/* small decorative hover spark */
+.nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.03);
+  transform: translateY(-1px);
+}
 
+/* active link highlight */
+.nav-links a.active {
+  background: rgba(247, 183, 49, 0.12);
+  color: #f7b731;
+  font-weight: 600;
+}
 
-
-  #spark {
-    position: relative; /* Ensure the spark effect positions correctly */
-    overflow: hidden; /* Hide any overflow from spark effect */
+/* Responsive */
+@media (max-width: 860px) {
+  .nav-links {
+    gap: 12px;
   }
-  
-  /* Styling the links */
-  #spark a {
-    text-decoration: none;
-    font-size: 1.7rem;
-    padding: 14px 16px;
-    position: relative; /* Ensure the spark effect positions correctly */
-    transition: color 0.3s;
+  .brainstrain {
+    font-size: 1.05rem;
   }
-  
-  /* Spark effect on hover */
-  #spark a:hover::before,
-  #spark a:hover::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(255,255,255,0.5) 80%);
-    opacity: 0;
-    pointer-events: none; /* Prevent interaction with the spark effect */
-    animation: spark 1s ease-out forwards; /* Apply the animation */
+  .logo {
+    width: 48px;
+    height: 48px;
   }
-  
-  /* Create spark effect */
-  #spark a:hover::before {
-    transform: scale(1.2); /* Enlarge the spark */
-  }
-  
-  @keyframes spark {
-    0% {
-      opacity: 1;
-      transform: scale(0.5);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(1.2);
-    }
-  }
+}

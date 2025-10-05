@@ -1,66 +1,67 @@
+/* Timer layout */
 .countdown-timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    gap: 20px;
-    font-family: 'Arial', sans-serif;
-    position: absolute;
-    bottom:30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: auto;
 }
-.label{
-    background-color:#5f1a1f ;
-    color: #ede8d1 !important;
-    padding: 3%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    border-radius: 10px;
-   
-        font-weight: 600;
-        font-style: normal;
-        margin-top: 5px;
-        font-size: 1.2rem !important;
-        color: #555;
-        font-family: "Giaza",sans-serif;
-        /*padding:5px;*/
-}
+
+/* each column */
 .time-section {
-    text-align: center;
-    width: 100%;
-   
-        
-  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-.time {
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: "Special Elite", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-family: 'EFCOBrookshireRegular', sans-serif;
-    border-radius: 5px;
-    animation: bounce 2s infinite;
-   
-      
+/* main number card (light grey rounded rectangle) */
+.time-box {
+  background: #d9d9d9;     
+  color: #2e0a13;          /* deep maroon/dark number color */
+  padding: 12px 18px;
+  min-width: 84px;
+  border-radius: 14px;
+  font-family: "EFCOBrookshireRegular", serif;
+  font-size: 2.15rem;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35), inset 0 -4px 8px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  transform-origin: center;
+  animation: tick 1s infinite;
 }
 
-/* Bounce animation */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px); /* Move up */
-    }
+/* label pill underneath (small rounded beige pill as accent) */
+.label {
+  margin-top: 8px;
+  background: #f0efe9;     /* lighter pill background to stand out */
+  color: #5f1a1f;          /* maroon label text */
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Britannica", serif;
+  letter-spacing: 1px;
 }
 
-@media  screen and (min-width:1093px) {
-    .countdown-timer{
-        bottom:6%;
-        width: 40vw;
+/* small subtle up/down animation for digits */
+@keyframes tick {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
 
-    }
-    
+/* responsiveness */
+@media (max-width: 900px) {
+  .time-box { min-width: 68px; font-size: 1.6rem; padding: 10px 12px; }
+  .label { font-size: 0.76rem; padding: 5px 8px; }
+}
+
+@media (max-width: 480px) {
+  .countdown-timer { gap: 8px; }
+  .time-box { min-width: 56px; font-size: 1.35rem; padding: 8px 10px; }
+  .label { font-size: 0.7rem; padding: 4px 7px; }
 }

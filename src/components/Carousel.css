@@ -1,128 +1,108 @@
-.event-carousel {
-    height:90vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-image: url('../assets/eventBg.png');
+.ca-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  color: #1a1a1a;
 }
 
-.event-slide-wrapper {
+.notice {
+  background: #e6e6e6;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  max-width: 700px;
+  text-align: center;
+}
+
+.ca-form-container {
+  background: #e6e6e6;
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.form-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+}
+
+.ca-form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
-.event-slide{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
+.form-row input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #2c003e;
+  color: #fff;
+  font-size: 15px;
+}
+
+.form-row input::placeholder {
+  color: #c9c9c9;
+}
+
+.qr-section {
   text-align: center;
-  border-radius: 32px;
-  border: 3px solid #611A22;
-  background-color: #EEEEEE;
-  position: relative;
-  width:250px;
-  height: 500px;
-  margin-top:5%;
+  margin: 20px 0;
 }
 
-.event-image {
-    width: 210px;
-    height: 190px;
-    /* padding-top: 30px; */
-    padding-bottom: 0px;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 32px;
-    position:absolute;
-    top:30px;
-    /* margin-bottom:20px; */
+.qr-placeholder {
+  width: 100px;
+  height: 100px;
+  background: #2c003e;
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
-.event-image img {
-    width:230px;
-    height:190px;
-    margin-bottom:0px;
+.upi-field {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background: #2c003e;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 25px;
 }
 
-
-.event-description {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    background-color: #EEEEEE;
-    position:absolute;
-    font-family: 'Kurale', serif;
-    color:#000000;
-    top:280px;
-    font-size:0.9em;
-    padding:10px;
+.upi-field::placeholder {
+  color: #c9c9c9;
 }
 
-.title {
-    width: 100%;
-    height: 50px;
-    bottom: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #490F0A;
-    color: white;
-    font-size:20px;
-    padding-top:15px;
-    font-weight: bold;
-    font-family: 'Kurale', serif;
-    margin-top: 40px; /* Add margin-top to create space */
-    margin-bottom:10px;
-    font-size: 2rem; /* Increase font size to make the title larger */
-    position:relative;
+.submit-btn {
+  padding: 12px 40px;
+  border: none;
+  border-radius: 25px;
+  background: #2c003e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.title h1{
-    position:absolute;
-    bottom:20px;
+.submit-btn:hover {
+  background: #4a007e;
 }
-
-.rm
-{
-    display:flex;
-    width:100px;
-    justify-content: center;
-    align-items: center;
-    background-color: #611A22;
-    color:white;
-    font-family: 'Kurale', serif;
-    padding:3px;
-    position:absolute;
-    bottom:15px;
-    border-radius:20px;
-}
-
-
-
-.custom-arrow {
-    background: none;
-    border: none;
-    position: fixed; /* or absolute based on your design */
-    bottom: 10px;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.custom-arrow img {
-    width: 40px;
-    height: 40px;
-}
-
-.custom-arrow-prev {
-    left: 5%; /* Adjust the position as needed */
-    top: 60%;
-}
-
-.custom-arrow-next {
-    right: 5%; /* Adjust the position as needed */
-    top: 60%;
-}
-

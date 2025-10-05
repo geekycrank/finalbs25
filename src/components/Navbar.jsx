@@ -1,44 +1,32 @@
-import React,{useEffect} from "react";
-import { useLocation } from "react-router-dom";
-import "./Navbar.css"
-import logo from  "../assets/bslogo.png"; 
+
+//import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import "./Navbar.css";
+import logo from "../assets/bslogo.png";
 
 function Navbar() {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
-  const [link, setLink] = React.useState("home");
-    const location = useLocation(); // Get the current location
-
-    // Update the active link based on the current path
-    useEffect(() => {
-        const currentPath = location.pathname;
-        if (currentPath === "/") {
-            setLink("home");
-        } else if (currentPath === "/Contact") {
-            setLink("contact");
-        } else if (currentPath === "/Events") {
-            setLink("events");
-        } else if (currentPath === "/Register") {
-            setLink("register");
-        }
-        else if(currentPath[1]==="e" && currentPath[5]==='t')
-        {
-          setLink("event");
-        }
-    }, [location]); // Runs whenever the location changes
   return (
-    <nav class="navbarr" style={{width:"100%",display:"flex"}} >
-         <img src={logo} alt="logo" className="logo"></img>
-        <h2 className='brainstrain' style={{margin:"0px",color:'inherit',paddingLeft:"10px"} }>BrainStrain '24</h2>
-         <div class="top-nav">
-          <p id="spark"><a href="/">home</a></p>
-          <p id="spark"><a href="/Events">events</a></p>
-          <p id="spark"><a href="/Register">register</a></p>
-          {(link!=="events" && link !=="register" && link !=="event") &&
-          <p id="spark"><a href="#Contact">contact</a></p>
-          }
-         </div>
+    <nav className="navbarr">
+      <div className="nav-container">
+        <div className="nav-left">
+          <img src={logo} alt="logo" className="logo" />
+          <h2 className="brainstrain">BrainStrain '25</h2>
+        </div>
+
+        <div className="nav-links">
+          <Link to="/" className={currentPath === "/" ? "active" : ""}>Home</Link>
+          <Link to="/Events" className={currentPath === "/Events" ? "active" : ""}>Events</Link>
+          <Link to="/Register" className={currentPath === "/Register" ? "active" : ""}>Register</Link>
+          <Link to="/Ca" className={currentPath === "/Ca" ? "active" : ""}>Referral Code</Link>
+          {(currentPath !== "/Events" && currentPath !== "/Register" && currentPath !== "/Ca") && (
+            <a href="#Contact" className={currentPath === "#Contact" ? "active" : ""}>Contact</a>
+          )}
+        </div>
+      </div>
     </nav>
   );
 }
-
 export default Navbar;

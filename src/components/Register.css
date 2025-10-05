@@ -1,495 +1,297 @@
+/* --------------------
+   FONT IMPORTS
+--------------------- */
+@font-face {
+  font-family: 'Brasika Display';
+  src: url('../assets/fontstyles/brasika-display.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: "EFCOBrookshireRegular";
-    
-    src: url('../assets/fontstyles/EFCOBrookshireRegular.ttf') format('truetype');
-    
+  font-family: 'Brastika';
+  src: url('../assets/fontstyles/Brastika Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face {
-   
-    font-family: "Giaza";
-    
-    src: url('../assets/fontstyles/Giaza.otf') format('truetype');
-    
+/* --------------------
+   BASE STYLES
+--------------------- */
+body {
+  background: #eadecb;
+  margin: 0;
+  padding: 0;
+  font-family: 'Brastika', Georgia, serif;
+  color: #000;
 }
 
-
-
-
-.Register{
-     background-image: url("../assets/event1Bg.png"); 
-    background-size: cover;       /* Ensures the background image covers the entire div */
-    background-position: center;
-    background-attachment: fixed;
-    /* Centers the background image */
-    height:auto;
-    max-width: 100vw;              /* Full viewport height */
-    color: white;                 /* Text color to stand out against the background */
-    text-align: center;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.registration-container,
+.onspot-banner {
+  max-width: 1250px;
+  margin: 2rem auto 0 auto;
+  border-radius: 40px;
+  box-sizing: border-box;
 }
 
-.form
-{
-    width:80%;
-    height:auto;
-
-    border:2px solid #eadecb;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-    margin:5%;
-    margin-bottom: 5%;
-    background-color: #eadecb;
-
-    padding-bottom:2%;
-    /* justify-content: center; */
+.registration-container {
+  padding: 2rem 3rem;
+  background: #f5f0f6;
+  box-shadow: 0 2px 16px rgba(60, 0, 60, 0.08);
 }
 
-.heading1
-{
-    width:100%;
-    height:80px;
-
-    /* border:2px solid #eadecb; */
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family:"Giaza",sans-serif;
-    font-size:1.3em;
-    background-color: #5f1a1f;
+.registration-container h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: 'Brasika Display', Georgia, serif;
+  color: #000;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topFrame
-{
-    width:100%;
-    height:auto;
-    background-color:#eadecb;
-
-    display:flex;
-    flex-wrap: wrap;
-
-    /* align-items:center; */
-    justify-content:center;
-    margin-bottom:0%;
-
-    padding:3%;
+.registration-container h1 {
+  text-align: center;
 }
 
-.Name
-{
-    width:50%;
-      height: 5%;
-
-    /* border:2px solid black; */
-    text-align:center;
-
-    margin-bottom:3%;
+/* --------------------
+   FORM STRUCTURE
+--------------------- */
+.form-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.2rem;
 }
 
-.Name div{
-    font-family:kurale;
-    color:black;
-    margin-bottom:5px;
-
-    padding-left:10%;
-    text-align:left;
+.form-row .form-group {
+  flex: 1;
 }
 
-
-
-.Name input{
-    width:85%;
-    height:40px;
-
-    border-radius:30px;
-    background-color: #794937;
-
-    border:none;
-    text-align: center;
-
-    color:white;
-    font-size: 18px;
-    padding-left:10%;
-    text-align:left;
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: #000;
+  font-size: 1.6rem;
+  font-family: 'Brastika', Georgia, serif;
 }
 
-.Name >  textarea{
-    width:85%;
-    height:80px;
-
-    border-radius:30px;
-    background-color: #794937;
-
-    border:none;
-    text-align: center;
-
-    color:white;
-    font-size: 18px;
-    padding-left:10%;
-    text-align:left;
-
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background: #4b3452;
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-#bottom
-{
-    display:none;
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+  background: #6a4c7a;
 }
 
-
-#MobQr
-{
-    display:none;
+/* Transaction ID field centered */
+input[type="text"][name="transactionId"] {
+  width: 50%;
+  min-width: 180px;
+  display: block;
+  margin: 0.8rem auto;
 }
 
-.QrContent{
-    display:none;
+/* --------------------
+   EVENTS SECTION
+--------------------- */
+.events-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  text-align: center;
+  color: #2c003e;
 }
 
-#MobQr img {
-    display:none;
-  }
-
-
-#top{
-    width: 100%;
-    font-size: 1.3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-.input{
-    margin-right: 5%;
+.events-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.participation-list{
-padding-bottom: 1%;
-color: black;
-font-family: "kurale",sans-serif;
-}
-.checkboxContainer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border:3px dashed #794937;
-    font-family: "kurale",sans-serif ;
-}
-.upper_events{
-    padding:1%;
-    display: flex;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-   
-}
-.upper_events > label{
-    width:100%;
+.events-section label {
+  background: #4b3452;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 14px;
+  user-select: none;
 }
 
-.lower_events{
-    padding:1%;
-    display: flex;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-    
-}
-.lower_events > label{
-    width:100%;
+.events-section label:hover {
+  background: #4a007e;
+  transform: scale(1.05);
 }
 
-.labell{
-    font-family: "Kurale", sans-serif !important;
-    color:#794937
+.events-section input[type="checkbox"] {
+  display: none;
 }
 
-
-.deskqr{
-    display:block;
-    width:180px;
-    height:180px;
-    background-color:#794937;
-    border-radius:20px;
-    margin-bottom:5%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    
-
-}
-.deskqr img {
-    display:block;
-    width:80%;
-    height:80%;
-  }
-
-
-    /* Style for the select dropdown */
-    .select {
-        width:90%;
-        height:40px;
-    
-        border-radius:30px;
-        background-color: #794937;
-    
-        border:none;
-        text-align: center;/* Text color */
-        font-family:kurale;
-        color:white;
-        font-size: 18px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        padding-left:10%;
-        text-align:left;
-      }
-      
-      /* Style for options */
-      .select option {
-        background-color: #905a1e;/* Background color for options */
-        color: #333; /* Text color for options */
-      }
-      
-      /* Hover effect */
-      .select:hover {
-        background-color: #905a1e;/* Background color on hover */
-        border-color: #3e8e41; /* Border color on hover */
-      }
-      
-      /* Focus effect */
-      .select:focus {
-        outline: none;
-        border-color: #3e8e41; /* Border color on focus */
-        background-color: #905a1e; /* Background color on focus */
-      }
-      
-      /* Disabled option */
-      .select option:disabled {
-        color: #aaa;
-      }
-    
-
-   .drama{
-margin: 4%;
-height: 15%;
-   }
-.Notee{
-  padding-bottom: 3%;
-    color: black;
-    font-family: 'Kurale';
-    font-size: 1.2rem;
-}
-@media screen and (max-width:623px) {
-  .Notee{
-    padding-bottom: 5% !important;
-      color: black;
-      font-family: 'Kurale';
-      font-size: 1rem !important;
-  }
+.events-section input[type="checkbox"]:checked + span {
+  background: #f7b731;
+  color: #2c003e;
+  font-weight: bold;
 }
 
-   .submitButton
-  {
-     width:15%;
-     height:40px;
-
-     background-color: #794937;
-     color:white;
-
-     font-family:kurale,sans-serif;
-     font-size: 1.3em;
-     border-radius:30px;
-
-     display:flex;
-     align-items:center;
-     justify-content:center;
-  }
-
-
-/* Hide the arrow spinners for Chrome, Safari, Edge, and Opera */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+/* Wrap label text inside span for toggle effect */
+.events-section label span {
+  display: inline-block;
 }
 
-/* Hide the arrow spinners for Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
+/* Custom styled checkbox */
+.events-section input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  margin-right: 8px;
+  border: 2px solid #fff;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-  /* Media Query */
+.events-section input[type="checkbox"]:checked {
+  background: #f7b731;
+  border-color: #f7b731;
+}
 
-@media screen and (max-width: 768px) 
-{
-    .Register
-    {
-        background-color: #5f1a1f;   
-        background-image: none !important; 
-    }
+.events-section input[type="checkbox"]:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #2c003e;
+  font-weight: bold;
+}
 
-    .heading1{
-        height:80px;
-    }
+/* --------------------
+   DROPDOWN (DRAMA etc.)
+--------------------- */
+select {
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  width: 60%;
+  background: #4b3452;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.7rem 1rem;
+  font-size: 1.15rem;
+  text-align: center;
+  font-family: inherit;
+}
 
-    .form
-    {
-        width:85%;
-        height:95%;
+/* --------------------
+   QR + TRANSACTION
+--------------------- */
+.qr-section {
+  text-align: center;
+  margin: 1.5rem 0 1rem 0;
+}
 
-        margin-top:10%;
-        background-color: #eadecb;
+.qr-section h4 {
+  margin-bottom: 0.7rem;
+  color: #3d2346;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-        margin-bottom: 150px;
+.qr-box {
+  width: 150px;
+  height: 150px;
+  background: #4b3452;
+  border-radius: 16px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        padding-bottom:30px;
-    }
+.qr-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Keep aspect ratio */
+}
 
-    .topFrame {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+.transaction-label {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
-        margin-bottom:30px;
+/* --------------------
+   SUBMIT BUTTON
+--------------------- */
+.submit-btn {
+  display: block;
+  width: 60%;
+  margin: 2rem auto 0 auto;
+  padding: 0.7rem 0;
+  background: #4b3452;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
 
-        /* position: relative; */
-    }
+.submit-btn:hover {
+  background: #6a4c7a;
+}
 
-    #bottom
-    {
-        display: block;
-    }
+/* --------------------
+   NOTES & BANNER
+--------------------- */
+.note {
+  font-size: 1.6rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'Brastika', Georgia, serif;
+}
 
-    .Name
-    {
-        width:95%;
-        margin-bottom: 20px; /* Adjusted margin for spacing */
-        /* Removed position: absolute; */
-        /* Removed top: 10%; */
-    }
-
-    .Name div {
-        padding-left:7%;
-    }
-
-    .Name input
-    {
-        width:90%;
-        font-family:kurale;
-        color:white;
-        font-size: 18px;
-        padding-left:10%;
-        text-align:left;
-    }
-
-
-
-    /* Style for the select dropdown */
-   .select {
-    width:90%;
-    height:40px;
-
-    border-radius:30px;
-    background-color: #794937;
-
-    border:none;
-    text-align: center;/* Text color */
-    font-family:kurale;
-    color:white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding-left:10%;
-    text-align:left;
-  }
-  
-  /* Style for options */
-  .select option {
-    background-color: #905a1e;/* Background color for options */
-    color: #333; /* Text color for options */
-  }
-  
-  /* Hover effect */
-  .select:hover {
-    background-color: #905a1e;/* Background color on hover */
-    border-color: #3e8e41; /* Border color on hover */
-  }
-  
-  /* Focus effect */
-  .select:focus {
-    outline: none;
-    border-color: #3e8e41; /* Border color on focus */
-    background-color: #905a1e; /* Background color on focus */
-  }
-  
-  /* Disabled option */
-  .select option:disabled {
-    color: #aaa;
-  }
-
-  #MobQr
-  {
-    display:block;
-    width:180px;
-    height:180px;
-    background-color:#794937;
-    border-radius:20px;
-    margin-bottom:5%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
- 
-  
-  .QrContent{
-    display:block;
-    font-family:kurale;
-    color:#794937;
-  }
-
-  #MobQr img {
-    display:block;
-    width:80%;
-    height:80%;
-  }
-
-  #frameBottom
-  {
-    display:none;
-  }
-
-  #top
-  {
-    display:none;
-  }
-
-  .submitButton
-  {
-     width:40%;
-     height:40px;
-
-     background-color: #794937;
-     color:white;
-
-     font-family:kurale,sans-serif;
-     font-size: 1.3em;
-     border-radius:30px;
-
-     display:flex;
-     align-items:center;
-     justify-content:center;
-  }
+.onspot-banner {
+  background: #ffffff;
+  color: #000;
+  font-family: 'Brasika Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  padding: 2rem 3rem;
+  border-radius: 30px;
+  max-width: 1250px;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  box-shadow: 0 2px 16px rgba(60, 0, 60, 0.08);
 }
